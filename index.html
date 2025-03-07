@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
         }
         .header {
             background: #333;
@@ -45,27 +46,77 @@
             color: white;
             margin-top: 20px;
         }
+        .navbar {
+            background: #444;
+            overflow: hidden;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .navbar a:hover {
+            background: #666;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode .container, .dark-mode .footer, .dark-mode .header {
+            background-color: #444;
+            color: white;
+        }
+        .toggle-button {
+            background: #ff9800;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="header">Corrosion and Its Control</div>
+    <div class="navbar">
+        <a href="#corrosion">What is Corrosion?</a>
+        <a href="#types">Types</a>
+        <a href="#prevention">Prevention</a>
+        <a href="#download">Download</a>
+        <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
     <div class="container">
-        <h2>What is Corrosion?</h2>
+        <h2 id="corrosion">What is Corrosion?</h2>
         <p>Corrosion is the gradual disintegration of metals due to chemical or electrochemical reactions with the environment. It causes significant material loss and affects industries worldwide.</p>
         
-        <h2>Types of Corrosion</h2>
+        <h2 id="types">Types of Corrosion</h2>
         <ul>
             <li><strong>Dry Corrosion:</strong> Occurs in the absence of moisture due to direct reaction with gases like oxygen and sulfur dioxide.</li>
             <li><strong>Wet Corrosion:</strong> Happens in the presence of moisture, forming electrochemical cells leading to metal degradation.</li>
         </ul>
         
-        <h2>Corrosion Prevention Methods</h2>
+        <h2 id="prevention">Corrosion Prevention Methods</h2>
         <ul>
             <li><strong>Cathodic Protection:</strong> Using sacrificial anodes like zinc to protect the main metal.</li>
             <li><strong>Protective Coatings:</strong> Application of paints, varnishes, and metallic coatings to prevent corrosion.</li>
             <li><strong>Corrosion Inhibitors:</strong> Chemical substances that slow down the corrosion process.</li>
         </ul>
+        
+        <h2 id="download">Download Notes</h2>
+        <p>Click the button below to download the full PDF of the corrosion notes:</p>
+        <a href="Module-IV-Corrosion___its_Control.pdf" download><button class="toggle-button">Download PDF</button></a>
     </div>
     <div class="footer">&copy; 2025 Corrosion Study | All Rights Reserved</div>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
